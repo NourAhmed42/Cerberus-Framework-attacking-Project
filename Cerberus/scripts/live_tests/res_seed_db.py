@@ -2,8 +2,9 @@
 
 Cross-platform: works from any machine/OS. Reads DATABASE_URL from
 backend/.env (or the DATABASE_URL environment variable if set) and admin
-credentials from SEED_ADMIN_EMAIL / SEED_ADMIN_PASSWORD (defaulting to the
-standard project admin).
+credentials from SEED_ADMIN_EMAIL / SEED_ADMIN_PASSWORD
+(SEED_ADMIN_PASSWORD is REQUIRED — never commit a default
+admin password).
 
 Usage (from any working directory):
     python scripts/live_tests/res_seed_db.py
@@ -63,13 +64,15 @@ async def main():
         ("plan-enterprise", "Enterprise",
          "For organizations with complex environments.", 0, "usd", "MONTH", False),
     ]
-admin_email = os.environ.get("SEED_ADMIN_EMAIL", "admin@cerberus-ai.com")
-admin_pw = os.environ.get("SEED_ADMIN_PASSWORD")
-if not admin_pw:
-    raise SystemExit(
-        "SEED_ADMIN_PASSWORD not set — export it before seeding "
-        "(never commit a default admin password)."
-    )
+
+    admin_email = os.environ.get("SEED_ADMIN_EMAIL", "admin@cerberus-ai.com")
+    admin_pw = os.environ.get("SEED_ADMIN_PASSWORD")
+    if not admin_pw:
+        raise SystemExit(
+            "SEED_ADMIN_PASSWORD not set — export it before seeding "
+            "(never commit a default admin password)."
+        )
+
     conn = await asyncpg.connect(_db_url())
     try:
         for pid, name, desc, cents, cur, interval, active in plans:
