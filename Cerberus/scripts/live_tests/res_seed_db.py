@@ -63,10 +63,13 @@ async def main():
         ("plan-enterprise", "Enterprise",
          "For organizations with complex environments.", 0, "usd", "MONTH", False),
     ]
-
-    admin_email = os.environ.get("SEED_ADMIN_EMAIL", "admin@cerberus-ai.com")
-    admin_pw = os.environ.get("SEED_ADMIN_PASSWORD", "Admin!zoHBF-1dlBnVVK22")
-
+admin_email = os.environ.get("SEED_ADMIN_EMAIL", "admin@cerberus-ai.com")
+admin_pw = os.environ.get("SEED_ADMIN_PASSWORD")
+if not admin_pw:
+    raise SystemExit(
+        "SEED_ADMIN_PASSWORD not set — export it before seeding "
+        "(never commit a default admin password)."
+    )
     conn = await asyncpg.connect(_db_url())
     try:
         for pid, name, desc, cents, cur, interval, active in plans:
