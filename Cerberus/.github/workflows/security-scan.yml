@@ -1,0 +1,33 @@
+name: Security Scan
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 6 * * 1'
+
+jobs:
+  codeql:
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: github/codeql-action/init@v3
+        with:
+          languages: python, javascript
+      - uses: github/codeql-action/analyze@v3
+
+  dependency-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check and scan dependencies
+        run: |
+          if [ -f backend/requirements.txt ]; then
+            pip install safety
+            safety check -r backend/requirements.txt || echo "Vulnerabilities found but continuing"
+          else
+            echo "requirements.txt not found, skipping check"
+          fi

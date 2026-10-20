@@ -1,0 +1,24 @@
+/**
+ * Cerberus AI — Global stylesheet (new design system).
+ *
+ * This file is the single entry for the new front-end design that was built
+ * as plain HTML/CSS/JS and is now integrated into the React app. The six
+ * original stylesheets are imported in dependency order:
+ *
+ *   1. styles.css            — base tokens, landing page, buttons, forms, footer
+ *   2. nav-account.css       — signed-in navbar account menu
+ *   3. app.css               — auth pages (login / register / forgot / verify)
+ *   4. system.css            — system panels (verification etc.)
+ *   5. register-compact.css  — compact registration card
+ *   6. shell.css             — app shell (sidebar, topbar, chat, tables, admin)
+ *
+ * NOTE: this file MUST be imported AFTER src/index.css (Tailwind preflight)
+ * so the new design system wins any cascade collisions.
+ */
+
+@import "./newfront/styles.css";
+@import "./newfront/nav-account.css";
+@import "./newfront/app.css";
+@import "./newfront/system.css";
+@import "./newfront/register-compact.css";
+@import "./newfront/shell.css";
