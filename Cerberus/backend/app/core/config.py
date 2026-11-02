@@ -242,17 +242,28 @@ class Settings(BaseSettings):
     PENTEST_DATASETS_DIR: str = "../datasets"  # payloads/wordlists/signatures
     PENTEST_USER_AGENT: str = "Cerberus-AI-Pentest/1.0"
 
-    # ─── External Tools (Metasploit, more later) ─────────
+    # ─── External Tools (Metasploit, Nmap, sqlmap) ───
     # Opt-in integrations with external security tools.
-    # Metasploit talks to msfrpcd (its RPC daemon) over XML-RPC.
-    # Disabled by default: the tool must be explicitly enabled
-    # AND the daemon must be running, or modules fail soft.
+    # Metasploit uses authenticated MessagePack over HTTP(S).
+    # Nmap runs via its CLI XML output (-oX -) without a shell.
+    # sqlmap runs as a bounded CLI process without a shell.
+    # Disabled by default: each tool must be explicitly enabled
+    # AND its daemon/binary must be reachable, or modules fail soft.
     MSF_ENABLED: bool = False
     MSF_RPC_HOST: str = "127.0.0.1"
     MSF_RPC_PORT: int = 55553          # msfrpcd default port
     MSF_RPC_PASSWORD: str = ""         # set via .env — never committed
-    MSF_RPC_SSL: bool = False          # msfrpcd -S
-    MSF_RPC_TIMEOUT: int = 10          # seconds per XML-RPC call
+    MSF_RPC_SSL: bool = False          # plaintext allowed for loopback only
+    MSF_RPC_CA_BUNDLE: str = ""        # optional CA file for verified TLS
+    MSF_RPC_TIMEOUT: int = 60          # seconds per RPC request; first console can start slowly
+
+    NMAP_ENABLED: bool = False
+    NMAP_PATH: str = "nmap"            # path or binary name on PATH
+    NMAP_TIMEOUT: int = 120            # seconds per Nmap scan execution
+
+    SQLMAP_ENABLED: bool = False
+    SQLMAP_PATH: str = "sqlmap"        # executable, or path to sqlmap.py
+    SQLMAP_TIMEOUT: int = 90            # seconds per sqlmap scan execution
 
     # ─── Monitoring / Prometheus ──────────────────────────────
     PROMETHEUS_ENABLED: bool = True

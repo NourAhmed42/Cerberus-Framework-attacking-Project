@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-02T15:56:00+00:00",
+  "attempts": {
+    "nmap": [
+      "2026-11-02T14:14:04+00:00",
+      "2026-11-02T14:14:36+00:00",
+      "2026-11-02T15:55:41+00:00"
+    ],
+    "sqlmap": [
+      "2026-11-02T14:14:04+00:00",
+      "2026-11-02T14:14:36+00:00",
+      "2026-11-02T15:55:41+00:00"
+    ]
+  },
+  "results": {
+    "nmap": {
+      "latest": {
+        "status": "captured",
+        "at_utc": "2026-11-02T15:56:00+00:00",
+        "started_utc": "2026-11-02T15:55:41+00:00",
+        "target": "http://scanme.nmap.org/",
+        "version": "Nmap version 7.95 ( https://nmap.org )",
+        "message": "The real tool completed and the framework returned a recognizable result.",
+        "framework_output": "[\n  {\n    \"module_name\": \"nmap_scanner\",\n    \"severity\": \"info\",\n    \"title\": \"Nmap scan: 3 open ports on scanme.nmap.org\",\n    \"target\": \"http://scanme.nmap.org/\",\n    \"confidence\": \"high\",\n    \"verified\": false,\n    \"cwe_id\": null,\n    \"metadata\": {\n      \"tool\": \"nmap\",\n      \"nmap_version\": \"7.95\",\n      \"host\": \"scanme.nmap.org\",\n      \"probed_ports\": [\n        22,\n        80,\n        443\n      ],\n      \"open_ports\": [\n        22,\n        80,\n        443\n      ],\n      \"services\": [\n        {\n          \"port\": 22,\n          \"protocol\": \"TCP\",\n          \"service\": \"ssh\",\n          \"product\": \"OpenSSH\",\n          \"version\": \"6.6.1p1 Ubuntu 2ubuntu2.13\",\n          \"cpe\": [\n            \"cpe:/a:openbsd:openssh:6.6.1p1\",\n            \"cpe:/o:linux:linux_kernel\"\n          ]\n        },\n        {\n          \"port\": 80,\n          \"protocol\": \"TCP\",\n          \"service\": \"http\",\n          \"product\": \"Apache httpd\",\n          \"version\": \"2.4.7\",\n          \"cpe\": [\n            \"cpe:/a:apache:http_server:2.4.7\"\n          ]\n        },\n        {\n          \"port\": 443,\n          \"protocol\": \"TCP\",\n          \"service\": \"https\",\n          \"product\": \"\",\n          \"version\": \"\",\n          \"cpe\": []\n        }\n      ],\n      \"scripts\": []\n    }\n  }\n]",
+        "tool_output_excerpt": "<status state=\"up\" reason=\"user-set\" reason_ttl=\"0\" />\n\n<address addr=\"45.33.32.156\" addrtype=\"ipv4\" />\n\n<ports>\n  <port protocol=\"tcp\" portid=\"22\">\n    <state state=\"open\" reason=\"syn-ack\" reason_ttl=\"0\" />\n    <service name=\"ssh\" product=\"OpenSSH\" version=\"6.6.1p1 Ubuntu 2ubuntu2.13\" extrainfo=\"Ubuntu Linux; protocol 2.0\" ostype=\"Linux\" method=\"probed\" conf=\"10\">\n      <cpe>cpe:/a:openbsd:openssh:6.6.1p1</cpe>\n      <cpe>cpe:/o:linux:linux_kernel</cpe>\n    </service>\n  </port>\n  <port protocol=\"tcp\" portid=\"80\">\n    <state state=\"open\" reason=\"syn-ack\" reason_ttl=\"0\" />\n    <service name=\"http\" product=\"Apache httpd\" version=\"2.4.7\" extrainfo=\"(Ubuntu)\" method=\"probed\" conf=\"10\">\n      <cpe>cpe:/a:apache:http_server:2.4.7</cpe>\n    </service>\n  </port>\n  <port protocol=\"tcp\" portid=\"443\">\n    <state state=\"open\" reason=\"syn-ack\" reason_ttl=\"0\" />\n    <service name=\"https\" method=\"table\" conf=\"3\" />\n  </port>\n</ports>\n\n<finished time=\"1793634960\" timestr=\"Mon Nov  2 15:56:00 2026\" summary=\"Nmap done at Mon Nov  2 15:56:00 2026; 1 IP address (1 host up) scanned in 18.92 seconds\" elapsed=\"18.92\" exit=\"success\" />"
+      },
+      "last_success": {
+        "status": "captured",
+        "at_utc": "2026-11-02T15:56:00+00:00",
+        "started_utc": "2026-11-02T15:55:41+00:00",
+        "target": "http://scanme.nmap.org/",
+        "version": "Nmap version 7.95 ( https://nmap.org )",
+        "message": "The real tool completed and the framework returned a recognizable result.",
+        "framework_output": "[\n  {\n    \"module_name\": \"nmap_scanner\",\n    \"severity\": \"info\",\n    \"title\": \"Nmap scan: 3 open ports on scanme.nmap.org\",\n    \"target\": \"http://scanme.nmap.org/\",\n    \"confidence\": \"high\",\n    \"verified\": false,\n    \"cwe_id\": null,\n    \"metadata\": {\n      \"tool\": \"nmap\",\n      \"nmap_version\": \"7.95\",\n      \"host\": \"scanme.nmap.org\",\n      \"probed_ports\": [\n        22,\n        80,\n        443\n      ],\n      \"open_ports\": [\n        22,\n        80,\n        443\n      ],\n      \"services\": [\n        {\n          \"port\": 22,\n          \"protocol\": \"TCP\",\n          \"service\": \"ssh\",\n          \"product\": \"OpenSSH\",\n          \"version\": \"6.6.1p1 Ubuntu 2ubuntu2.13\",\n          \"cpe\": [\n            \"cpe:/a:openbsd:openssh:6.6.1p1\",\n            \"cpe:/o:linux:linux_kernel\"\n          ]\n        },\n        {\n          \"port\": 80,\n          \"protocol\": \"TCP\",\n          \"service\": \"http\",\n          \"product\": \"Apache httpd\",\n          \"version\": \"2.4.7\",\n          \"cpe\": [\n            \"cpe:/a:apache:http_server:2.4.7\"\n          ]\n        },\n        {\n          \"port\": 443,\n          \"protocol\": \"TCP\",\n          \"service\": \"https\",\n          \"product\": \"\",\n          \"version\": \"\",\n          \"cpe\": []\n        }\n      ],\n      \"scripts\": []\n    }\n  }\n]",
+        "tool_output_excerpt": "<status state=\"up\" reason=\"user-set\" reason_ttl=\"0\" />\n\n<address addr=\"45.33.32.156\" addrtype=\"ipv4\" />\n\n<ports>\n  <port protocol=\"tcp\" portid=\"22\">\n    <state state=\"open\" reason=\"syn-ack\" reason_ttl=\"0\" />\n    <service name=\"ssh\" product=\"OpenSSH\" version=\"6.6.1p1 Ubuntu 2ubuntu2.13\" extrainfo=\"Ubuntu Linux; protocol 2.0\" ostype=\"Linux\" method=\"probed\" conf=\"10\">\n      <cpe>cpe:/a:openbsd:openssh:6.6.1p1</cpe>\n      <cpe>cpe:/o:linux:linux_kernel</cpe>\n    </service>\n  </port>\n  <port protocol=\"tcp\" portid=\"80\">\n    <state state=\"open\" reason=\"syn-ack\" reason_ttl=\"0\" />\n    <service name=\"http\" product=\"Apache httpd\" version=\"2.4.7\" extrainfo=\"(Ubuntu)\" method=\"probed\" conf=\"10\">\n      <cpe>cpe:/a:apache:http_server:2.4.7</cpe>\n    </service>\n  </port>\n  <port protocol=\"tcp\" portid=\"443\">\n    <state state=\"open\" reason=\"syn-ack\" reason_ttl=\"0\" />\n    <service name=\"https\" method=\"table\" conf=\"3\" />\n  </port>\n</ports>\n\n<finished time=\"1793634960\" timestr=\"Mon Nov  2 15:56:00 2026\" summary=\"Nmap done at Mon Nov  2 15:56:00 2026; 1 IP address (1 host up) scanned in 18.92 seconds\" elapsed=\"18.92\" exit=\"success\" />"
+      }
+    },
+    "sqlmap": {
+      "latest": {
+        "status": "captured",
+        "at_utc": "2026-11-02T15:55:48+00:00",
+        "started_utc": "2026-11-02T15:55:41+00:00",
+        "target": "https://sekumart.sekuripy.hr/product.php?id=1",
+        "version": "1.10.11.2#dev",
+        "message": "The real tool completed and the framework returned a recognizable result.",
+        "framework_output": "[\n  {\n    \"module_name\": \"sqlmap_scanner\",\n    \"severity\": \"high\",\n    \"title\": \"sqlmap reported SQL injection in GET parameter 'id'\",\n    \"target\": \"https://sekumart.sekuripy.hr/product.php?id=1\",\n    \"confidence\": \"high\",\n    \"verified\": false,\n    \"cwe_id\": \"CWE-89\",\n    \"metadata\": {\n      \"tool\": \"sqlmap\",\n      \"sqlmap_version\": \"1.10.11.2#dev\",\n      \"parameter\": \"id\",\n      \"method\": \"GET\",\n      \"techniques\": [\n        {\n          \"type\": \"error-based\",\n          \"title\": \"MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)\"\n        }\n      ],\n      \"dbms\": \"MySQL >= 5.1 (MariaDB fork)\",\n      \"component\": \"/product.php\"\n    }\n  }\n]",
+        "tool_output_excerpt": "sqlmap identified the following injection point(s) with a total of 3 HTTP(s) requests:\n---\nParameter: id (GET)\n    Type: error-based\n    Title: MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)\n    Payload: id=1 AND EXTRACTVALUE(2683,CONCAT(0x5c,0x716b6b6b71,(SELECT (ELT(2683=2683,1))),0x7170627871))\n---\n\n[15:55:46] [INFO] the back-end DBMS is MySQL\nweb application technology: Apache, PHP 8.2.35, PHP\nback-end DBMS: MySQL >= 5.1 (MariaDB fork)"
+      },
+      "last_success": {
+        "status": "captured",
+        "at_utc": "2026-11-02T15:55:48+00:00",
+        "started_utc": "2026-11-02T15:55:41+00:00",
+        "target": "https://sekumart.sekuripy.hr/product.php?id=1",
+        "version": "1.10.11.2#dev",
+        "message": "The real tool completed and the framework returned a recognizable result.",
+        "framework_output": "[\n  {\n    \"module_name\": \"sqlmap_scanner\",\n    \"severity\": \"high\",\n    \"title\": \"sqlmap reported SQL injection in GET parameter 'id'\",\n    \"target\": \"https://sekumart.sekuripy.hr/product.php?id=1\",\n    \"confidence\": \"high\",\n    \"verified\": false,\n    \"cwe_id\": \"CWE-89\",\n    \"metadata\": {\n      \"tool\": \"sqlmap\",\n      \"sqlmap_version\": \"1.10.11.2#dev\",\n      \"parameter\": \"id\",\n      \"method\": \"GET\",\n      \"techniques\": [\n        {\n          \"type\": \"error-based\",\n          \"title\": \"MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)\"\n        }\n      ],\n      \"dbms\": \"MySQL >= 5.1 (MariaDB fork)\",\n      \"component\": \"/product.php\"\n    }\n  }\n]",
+        "tool_output_excerpt": "sqlmap identified the following injection point(s) with a total of 3 HTTP(s) requests:\n---\nParameter: id (GET)\n    Type: error-based\n    Title: MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)\n    Payload: id=1 AND EXTRACTVALUE(2683,CONCAT(0x5c,0x716b6b6b71,(SELECT (ELT(2683=2683,1))),0x7170627871))\n---\n\n[15:55:46] [INFO] the back-end DBMS is MySQL\nweb application technology: Apache, PHP 8.2.35, PHP\nback-end DBMS: MySQL >= 5.1 (MariaDB fork)"
+      }
+    },
+    "metasploit": {
+      "latest": {
+        "status": "not_tested",
+        "message": "No public Metasploit scan was performed; the genuine repaired integration was checked separately on a disposable loopback lab."
+      },
+      "last_success": null,
+      "local_standalone_check": {
+        "at_utc": "2026-10-27T22:46:44+00:00",
+        "version": "6.5.9-dev-",
+        "target": "127.0.0.1:46197",
+        "tool_status": "PASS",
+        "integration_status": "FAILED — incompatible RPC protocol",
+        "tool_output_excerpt": "RHOSTS => 127.0.0.1\nPORTS => 46197\nTHREADS => 1\n[+] 127.0.0.1             - 127.0.0.1:46197 - TCP OPEN\n[*] 127.0.0.1             - Scanned 1 of 1 hosts (100% complete)\n[*] Auxiliary module execution completed"
+      },
+      "previous_local_combined_check": {
+        "at_utc": "2026-10-28T02:00:46+00:00",
+        "target": "http://127.0.0.1:43003/vulnerable?id=1",
+        "versions": {
+          "nmap": "Nmap version 7.95 ( https://nmap.org )",
+          "sqlmap": "1.9.6#stable",
+          "metasploit": "6.5.9-dev-"
+        },
+        "plan": [
+          "nmap_scanner",
+          "sqlmap_scanner",
+          "metasploit_scanner"
+        ],
+        "nmap_probed_ports": [
+          36319,
+          43003
+        ],
+        "nmap_open_ports": [
+          43003
+        ],
+        "sqlmap_status": "detected",
+        "sqlmap_method": "GET",
+        "sqlmap_parameter": "id",
+        "msf_scanned_ports": [
+          36319,
+          43003
+        ],
+        "msf_open_ports": [
+          43003
+        ],
+        "scope_refused": [
+          "nmap_scanner",
+          "sqlmap_scanner",
+          "metasploit_scanner"
+        ],
+        "rpc_timeout_seconds": 60,
+        "first_console_create_seconds": 0.48,
+        "consoles_left_after_successful_run": 0,
+        "metasploit_console_excerpt": "[+] 127.0.0.1             - 127.0.0.1:43003 - TCP OPEN\n[*] Auxiliary module execution completed",
+        "msf_finding_title": "Metasploit auxiliary/scanner/portscan/tcp: 1 open ports on 127.0.0.1"
+      },
+      "local_integration_check": {
+        "at_utc": "2026-10-28T02:00:46+00:00",
+        "version": "6.5.9-dev-",
+        "target": "127.0.0.1:43003",
+        "tool_status": "PASS — genuine Metasploit in a local scheduler plan",
+        "integration_status": "PASS — MessagePack RPC and reviewed TCP scan",
+        "finding_title": "Metasploit auxiliary/scanner/portscan/tcp: 1 open ports on 127.0.0.1",
+        "open_ports": [
+          43003
+        ],
+        "tool_output_excerpt": "[+] 127.0.0.1             - 127.0.0.1:43003 - TCP OPEN\n[*] Auxiliary module execution completed"
+      },
+      "local_combined_check": {
+        "at_utc": "2026-10-28T02:24:10+00:00",
+        "target": "http://127.0.0.1:34229/vulnerable?id=1",
+        "versions": {
+          "nmap": "Nmap version 7.95 ( https://nmap.org )",
+          "sqlmap": "1.9.6#stable",
+          "metasploit": "6.5.9-dev-"
+        },
+        "plan": [
+          "nmap_scanner",
+          "sqlmap_scanner",
+          "metasploit_scanner"
+        ],
+        "nmap_probed_ports": [
+          34229,
+          40623
+        ],
+        "nmap_open_ports": [
+          34229
+        ],
+        "sqlmap_status": "detected",
+        "sqlmap_method": "GET",
+        "sqlmap_parameter": "id",
+        "msf_scanned_ports": [
+          34229,
+          40623
+        ],
+        "msf_open_ports": [
+          34229
+        ],
+        "scope_refused": [
+          "nmap_scanner",
+          "sqlmap_scanner",
+          "metasploit_scanner"
+        ],
+        "rpc_timeout_seconds": 60,
+        "first_console_create_seconds": 17.8,
+        "consoles_left_after_successful_run": 0,
+        "metasploit_console_excerpt": "[+] 127.0.0.1             - 127.0.0.1:34229 - TCP OPEN\n[*] Auxiliary module execution completed"
+      },
+      "local_ipv6_check": {
+        "at_utc": "2026-10-28T02:24:12+00:00",
+        "target": "[::1]:35485",
+        "finding_title": "Metasploit auxiliary/scanner/portscan/tcp: 1 open ports on ::1",
+        "open_ports": [
+          35485
+        ],
+        "tool_output_excerpt": "[+] [::1]                 - ::1:35485 - TCP OPEN\n[*] Auxiliary module execution completed"
+      },
+      "local_reverification_check": {
+        "at_utc": "2026-11-02T14:06:25+00:00",
+        "version": "6.5.9-dev- (package 6.5.9~20261102055758.git.3.494135f~1rapid7-1)",
+        "scope": "loopback only: 127.0.0.1 and ::1 with temporary listeners",
+        "ipv4_open_ports_found": true,
+        "ipv6_open_ports_found": true,
+        "out_of_scope_target": "refused before daemon contact",
+        "exploit_module": "refused by Cerberus (no module run)",
+        "note": "Re-verification after the environment reset, using a newer 6.5.9 package build (20261102 build) installed from Rapid7 APT with signature and hash checks."
+      },
+      "local_all_tools_run": {
+        "status": "captured",
+        "started_utc": "2026-11-02T15:55:41+00:00",
+        "at_utc": "2026-11-02T15:55:56+00:00",
+        "target": "127.0.0.1:45201 (local loopback lab)",
+        "message": "The real Metasploit daemon scanned the local listener and reported the open port.",
+        "framework_output": "[\n  {\n    \"module_name\": \"metasploit_scanner\",\n    \"severity\": \"info\",\n    \"title\": \"Metasploit auxiliary/scanner/portscan/tcp: 1 open ports on 127.0.0.1\",\n    \"target\": \"http://127.0.0.1:45201/\",\n    \"confidence\": \"high\",\n    \"verified\": false,\n    \"cwe_id\": null,\n    \"metadata\": {\n      \"msf_module\": \"auxiliary/scanner/portscan/tcp\",\n      \"host\": \"127.0.0.1\",\n      \"open_ports\": [\n        45201\n      ],\n      \"options\": {\n        \"RHOSTS\": \"127.0.0.1\",\n        \"PORTS\": \"45201\",\n        \"THREADS\": \"10\"\n      }\n    }\n  }\n]",
+        "open_ports": [
+          45201
+        ],
+        "expected_port": 45201,
+        "tool": "metasploit"
+      }
+    }
+  }
+}

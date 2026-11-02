@@ -1,0 +1,38 @@
+{
+  "run_at_utc": "2026-11-02T15:56:00+00:00",
+  "engagements_concurrent": true,
+  "results": {
+    "nmap": {
+      "status": "captured",
+      "at_utc": "2026-11-02T15:56:00+00:00",
+      "started_utc": "2026-11-02T15:55:41+00:00",
+      "target": "http://scanme.nmap.org/",
+      "version": "Nmap version 7.95 ( https://nmap.org )",
+      "message": "The real tool completed and the framework returned a recognizable result.",
+      "framework_output": "[\n  {\n    \"module_name\": \"nmap_scanner\",\n    \"severity\": \"info\",\n    \"title\": \"Nmap scan: 3 open ports on scanme.nmap.org\",\n    \"target\": \"http://scanme.nmap.org/\",\n    \"confidence\": \"high\",\n    \"verified\": false,\n    \"cwe_id\": null,\n    \"metadata\": {\n      \"tool\": \"nmap\",\n      \"nmap_version\": \"7.95\",\n      \"host\": \"scanme.nmap.org\",\n      \"probed_ports\": [\n        22,\n        80,\n        443\n      ],\n      \"open_ports\": [\n        22,\n        80,\n        443\n      ],\n      \"services\": [\n        {\n          \"port\": 22,\n          \"protocol\": \"TCP\",\n          \"service\": \"ssh\",\n          \"product\": \"OpenSSH\",\n          \"version\": \"6.6.1p1 Ubuntu 2ubuntu2.13\",\n          \"cpe\": [\n            \"cpe:/a:openbsd:openssh:6.6.1p1\",\n            \"cpe:/o:linux:linux_kernel\"\n          ]\n        },\n        {\n          \"port\": 80,\n          \"protocol\": \"TCP\",\n          \"service\": \"http\",\n          \"product\": \"Apache httpd\",\n          \"version\": \"2.4.7\",\n          \"cpe\": [\n            \"cpe:/a:apache:http_server:2.4.7\"\n          ]\n        },\n        {\n          \"port\": 443,\n          \"protocol\": \"TCP\",\n          \"service\": \"https\",\n          \"product\": \"\",\n          \"version\": \"\",\n          \"cpe\": []\n        }\n      ],\n      \"scripts\": []\n    }\n  }\n]",
+      "tool_output_excerpt": "<status state=\"up\" reason=\"user-set\" reason_ttl=\"0\" />\n\n<address addr=\"45.33.32.156\" addrtype=\"ipv4\" />\n\n<ports>\n  <port protocol=\"tcp\" portid=\"22\">\n    <state state=\"open\" reason=\"syn-ack\" reason_ttl=\"0\" />\n    <service name=\"ssh\" product=\"OpenSSH\" version=\"6.6.1p1 Ubuntu 2ubuntu2.13\" extrainfo=\"Ubuntu Linux; protocol 2.0\" ostype=\"Linux\" method=\"probed\" conf=\"10\">\n      <cpe>cpe:/a:openbsd:openssh:6.6.1p1</cpe>\n      <cpe>cpe:/o:linux:linux_kernel</cpe>\n    </service>\n  </port>\n  <port protocol=\"tcp\" portid=\"80\">\n    <state state=\"open\" reason=\"syn-ack\" reason_ttl=\"0\" />\n    <service name=\"http\" product=\"Apache httpd\" version=\"2.4.7\" extrainfo=\"(Ubuntu)\" method=\"probed\" conf=\"10\">\n      <cpe>cpe:/a:apache:http_server:2.4.7</cpe>\n    </service>\n  </port>\n  <port protocol=\"tcp\" portid=\"443\">\n    <state state=\"open\" reason=\"syn-ack\" reason_ttl=\"0\" />\n    <service name=\"https\" method=\"table\" conf=\"3\" />\n  </port>\n</ports>\n\n<finished time=\"1793634960\" timestr=\"Mon Nov  2 15:56:00 2026\" summary=\"Nmap done at Mon Nov  2 15:56:00 2026; 1 IP address (1 host up) scanned in 18.92 seconds\" elapsed=\"18.92\" exit=\"success\" />"
+    },
+    "sqlmap": {
+      "status": "captured",
+      "at_utc": "2026-11-02T15:55:48+00:00",
+      "started_utc": "2026-11-02T15:55:41+00:00",
+      "target": "https://sekumart.sekuripy.hr/product.php?id=1",
+      "version": "1.10.11.2#dev",
+      "message": "The real tool completed and the framework returned a recognizable result.",
+      "framework_output": "[\n  {\n    \"module_name\": \"sqlmap_scanner\",\n    \"severity\": \"high\",\n    \"title\": \"sqlmap reported SQL injection in GET parameter 'id'\",\n    \"target\": \"https://sekumart.sekuripy.hr/product.php?id=1\",\n    \"confidence\": \"high\",\n    \"verified\": false,\n    \"cwe_id\": \"CWE-89\",\n    \"metadata\": {\n      \"tool\": \"sqlmap\",\n      \"sqlmap_version\": \"1.10.11.2#dev\",\n      \"parameter\": \"id\",\n      \"method\": \"GET\",\n      \"techniques\": [\n        {\n          \"type\": \"error-based\",\n          \"title\": \"MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)\"\n        }\n      ],\n      \"dbms\": \"MySQL >= 5.1 (MariaDB fork)\",\n      \"component\": \"/product.php\"\n    }\n  }\n]",
+      "tool_output_excerpt": "sqlmap identified the following injection point(s) with a total of 3 HTTP(s) requests:\n---\nParameter: id (GET)\n    Type: error-based\n    Title: MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)\n    Payload: id=1 AND EXTRACTVALUE(2683,CONCAT(0x5c,0x716b6b6b71,(SELECT (ELT(2683=2683,1))),0x7170627871))\n---\n\n[15:55:46] [INFO] the back-end DBMS is MySQL\nweb application technology: Apache, PHP 8.2.35, PHP\nback-end DBMS: MySQL >= 5.1 (MariaDB fork)"
+    },
+    "metasploit": {
+      "status": "captured",
+      "started_utc": "2026-11-02T15:55:41+00:00",
+      "at_utc": "2026-11-02T15:55:56+00:00",
+      "target": "127.0.0.1:45201 (local loopback lab)",
+      "message": "The real Metasploit daemon scanned the local listener and reported the open port.",
+      "framework_output": "[\n  {\n    \"module_name\": \"metasploit_scanner\",\n    \"severity\": \"info\",\n    \"title\": \"Metasploit auxiliary/scanner/portscan/tcp: 1 open ports on 127.0.0.1\",\n    \"target\": \"http://127.0.0.1:45201/\",\n    \"confidence\": \"high\",\n    \"verified\": false,\n    \"cwe_id\": null,\n    \"metadata\": {\n      \"msf_module\": \"auxiliary/scanner/portscan/tcp\",\n      \"host\": \"127.0.0.1\",\n      \"open_ports\": [\n        45201\n      ],\n      \"options\": {\n        \"RHOSTS\": \"127.0.0.1\",\n        \"PORTS\": \"45201\",\n        \"THREADS\": \"10\"\n      }\n    }\n  }\n]",
+      "open_ports": [
+        45201
+      ],
+      "expected_port": 45201
+    }
+  }
+}

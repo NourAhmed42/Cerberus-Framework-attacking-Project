@@ -35,6 +35,7 @@ langchain-openai==0.3.0
 
 # ─── HTTP Client ─────────────────────────────────────────────
 httpx==0.28.1
+msgpack==1.1.2  # Metasploit RPC wire protocol
 
 # ─── File Processing ────────────────────────────────────────
 python-magic==0.4.27

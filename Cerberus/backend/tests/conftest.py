@@ -41,6 +41,33 @@ async def setup_database():
         await conn.run_sync(Base.metadata.drop_all)
 
 
+@pytest_asyncio.fixture(autouse=True)
+async def _isolate_redis_abuse_state():
+    """The abuse detector keeps failed-login and 403 counters in Redis under
+    ``abuse:*`` keys. Those survive between tests (the in-memory reset above
+    does not touch Redis), so one test's failed logins can block 127.0.0.1 for
+    the next. Remove only the ``abuse:*`` keys before and after each test.
+
+    Point REDIS_URL at a disposable Redis for the test run, as the test guide
+    requires; this fixture never touches keys outside the ``abuse:`` prefix.
+    """
+    from app.core.abuse_detector import AbuseDetector
+
+    async def _clear_abuse_keys() -> None:
+        client = AbuseDetector.get_client()
+        if client is None:
+            return
+        try:
+            async for key in client.scan_iter(match="abuse:*", count=500):
+                await client.delete(key)
+        except Exception:
+            AbuseDetector.mark_redis_down()
+
+    await _clear_abuse_keys()
+    yield
+    await _clear_abuse_keys()
+
+
 @pytest_asyncio.fixture
 async def db_session() -> AsyncGenerator[AsyncSession, None]:  # noqa: UP043
     """Provide a test database session."""

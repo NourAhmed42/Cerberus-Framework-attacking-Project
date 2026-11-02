@@ -1,0 +1,6 @@
+Starting three engagements at the same time: Nmap, sqlmap, Metasploit...
+Wrote /home/user/Cerberus/docs/real result.pdf
+Report source/data SHA-256: 07613869db580f8ed6688475446e7596126b8fd508b42bbcfc16a421c31fe195
+nmap: CAPTURED — The real tool completed and the framework returned a recognizable result.
+sqlmap: CAPTURED — The real tool completed and the framework returned a recognizable result.
+metasploit: CAPTURED — The real Metasploit daemon scanned the local listener and reported the open port.
